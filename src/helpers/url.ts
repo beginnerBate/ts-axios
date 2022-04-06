@@ -1,3 +1,16 @@
+import {isDate, isPlainObject} from './util'
+
+function encode(val: string): string{
+  return encodeURIComponent(val)
+    .replace(/%40/g, '@')
+    .replace(/%3A/ig, ':')
+    .replace(/%24/g, '$')
+    .replace(/%2C/ig, ',')
+    .replace(/%20/g, '+')
+    .replace(/%5B/ig, '[')
+    .replace(/%5D/ig, ']')
+
+}
 export function buildURL(url: string, params?: any): string{
   if(!params){
     return url
@@ -16,5 +29,30 @@ export function buildURL(url: string, params?: any): string{
     }else{
       values = [val]
     }
+    // 统一处理 键值对
+    values.forEach((val)=>{
+      if(isDate(val)){
+
+        val = val.toISOString()
+
+      }else if (isPlainObject(val)){
+
+        val = JSON.stringify(val)
+      }
+      parts.push(`${encode(key)}=${encode(val)}`)
+    })
+
   })
+
+  let serializedParams = parts.join("&")
+
+  if(serializedParams){
+    // 去掉哈希
+    const markIndex  = url.indexOf("#")
+    if(markIndex !== -1){
+      url = url.slice(0, markIndex)
+    }
+    url += (url.indexOf('?') === -1 ? '?' : '&') +serializedParams
+  }
+  return url
 }

@@ -32,7 +32,10 @@ router.get('/simple/get', function(req, res){
     msg:"Heoll miss liu"
   })
 })
-
+//  添加base 路由
+router.get('/base/get', function(req, res){
+  res.json(req.query)
+})
 app.use(router)
 
 const port = process.env.PORT || 8080
