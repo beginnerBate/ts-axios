@@ -28,6 +28,10 @@ export function parseHeaders(headers: string) : any {
 
 # axios函数重载-需求分析+ 重载实现 + demo 编写 [2022年4月13日] 
 
+# axios响应式数据支持泛型: 需求分析 + 接口添加泛型参数 + demo编写[2022年4月13]
+
+# axios拦截器实现: 需求分析 + 整体设计 + 拦截器管理类实现 + 拦截器类调用实现 + demo编写 [2022年4月13]
+
 
 
 

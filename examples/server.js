@@ -80,6 +80,8 @@ router.get('/error/timeout', function(req, res){
 
 // 封装接口路由函数
 registerExtendRouter()
+// 拦截器模块路由hanshu
+registerInterceptorRouter()
 
 app.use(router)
 
@@ -119,4 +121,21 @@ function registerExtendRouter(){
     res.json(req.body)
   })
 
+  router.get('/extend/user', function(req, res){
+    res.json({
+      code:0,
+      message:'ok',
+      result:{
+        name: 'jack',
+        age:18
+      }
+    })
+  })
+
+}
+
+function registerInterceptorRouter () {
+  router.get('/interceptor/get', function(req, res) {
+    res.end('hello')
+  })
 }
