@@ -24,5 +24,11 @@ export function parseHeaders(headers: string) : any {
   return parsed
 }
 ```
+# 接口扩展 [2022年4月12日]
+
+# axios函数重载-需求分析+ 重载实现 + demo 编写 [2022年4月13日] 
+
+
+
 
 
