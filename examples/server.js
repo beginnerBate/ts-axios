@@ -83,6 +83,9 @@ registerExtendRouter()
 // 拦截器模块路由hanshu
 registerInterceptorRouter()
 
+// 默认配置模块路由
+registerConfigRouter()
+
 app.use(router)
 
 const port = process.env.PORT || 8080
@@ -137,5 +140,11 @@ function registerExtendRouter(){
 function registerInterceptorRouter () {
   router.get('/interceptor/get', function(req, res) {
     res.end('hello')
+  })
+}
+
+function registerConfigRouter() {
+  router.post('/config/post', function(req, res){
+    res.json(req.body)
   })
 }

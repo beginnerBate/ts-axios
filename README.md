@@ -32,6 +32,10 @@ export function parseHeaders(headers: string) : any {
 
 # axios拦截器实现: 需求分析 + 整体设计 + 拦截器管理类实现 + 拦截器类调用实现 + demo编写 [2022年4月13]
 
+# axios配置化实现: 需求分析 + 默认配置 + 配置合并及策略 + flatten headers + demo编写 [2022年05月16]
+
+# axios
+
 
 
 
