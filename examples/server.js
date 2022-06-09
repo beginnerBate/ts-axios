@@ -86,6 +86,9 @@ registerInterceptorRouter()
 // 默认配置模块路由
 registerConfigRouter()
 
+// 取消请求模块路由
+registerCancelRouter()
+
 app.use(router)
 
 const port = process.env.PORT || 8080
@@ -147,4 +150,18 @@ function registerConfigRouter() {
   router.post('/config/post', function(req, res){
     res.json(req.body)
   })
+}
+
+function registerCancelRouter(){
+  router.get('/cancel/get', function(req,res){
+    setTimeout(()=>{
+      res.json("hello")
+    },1000)
+  })
+  router.post('/cancel/get', function(req,res){
+    setTimeout(()=>{
+      res.json(req.body)
+    },1000)
+  })
+
 }

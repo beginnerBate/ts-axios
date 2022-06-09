@@ -34,7 +34,7 @@ export function parseHeaders(headers: string) : any {
 
 # axios配置化实现: 需求分析 + 默认配置 + 配置合并及策略 + flatten headers + demo编写 [2022年05月16]
 
-# axios
+# axios取消功能实现: 需求分析 + 异步分离的设计方案 + CancelToken类实现 + CancelToken扩展静态接口 + Cancel类实现以及axios的扩展 + 额外逻辑实现 + demo 编写 [2022年06月08]
 
 
 
